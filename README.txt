@@ -1,7 +1,0 @@
-ELIZABETH
-
-I
-
-AM
-
-AWESOME

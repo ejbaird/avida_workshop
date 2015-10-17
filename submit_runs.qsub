@@ -1,0 +1,13 @@
+#!/bin/bash -login
+#PBS -l walltime=7:00:00  # 4 hours is sweet spot
+#PBS -l mem=4096mb  # smallest size
+#PBS -N all_rewarded  # name of run
+#PBS -t 16-20  # for replications
+#PBS -M bairdel1@msu.edu
+
+cd ~/complex_features_experiment
+mkdir results/all_rewarded/${PBS_ARRAYID}
+cp configs/* results/all_rewarded/${PBS_ARRAYID}
+
+cd results/all_rewarded/${PBS_ARRAYID}
+./avida -set RANDOM_SEED ${PBS_ARRAYID}
